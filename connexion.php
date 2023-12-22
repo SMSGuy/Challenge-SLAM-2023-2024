@@ -8,9 +8,9 @@
         $email = htmlspecialchars($_POST['email']); 
         $password = htmlspecialchars($_POST['password']);
         
-        $email = strtolower($email); // email transformé en minuscule
+        $email = strtolower($email); 
         
-        // On regarde si l'utilisateur est inscrit dans la table utilisateurs
+       
         $check = $bdd->prepare('SELECT * FROM UTILISATEUR WHERE UTIL_EMAIL = ?');
         $check->execute([$email]);
         $data = $check->fetch();
